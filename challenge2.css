@@ -1,0 +1,304 @@
+/*lettertypes*/
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:400,700&display=swap');
+@font-face{
+	font-family: Anurati;
+	src:url('Anurati.otf');
+}
+
+/*geen padding en margin op alle elementen*/
+*{
+	padding:0;
+	margin:0;
+}
+
+body{
+	/*lettertype*/
+	font-family: 'Saira Semi Condensed',sans-serif;
+	/*tekst in het midden*/
+	text-align: center;
+	color:white;
+	/*achtergrond*/
+	background-image: url("ag.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*absolute gepositioneerde animaties vliegen buiten de pagina*/
+	overflow: hidden;
+}
+
+header{
+	background-color: black;
+	padding:20px 0;
+}
+
+/*titel in header*/
+h1{
+	font-family: Anurati, sans-serif;
+	/*Hoofdletters*/
+	text-transform: uppercase;
+	/*Letters verder uit elkaar*/
+	letter-spacing: 0.2em;
+}
+
+p{
+	font-size: 1.5em;
+	/*ruimte boven en onder*/
+	padding: 10px 0;
+}
+
+#tijd{
+	font-size: 4em;
+}
+
+#zon,#maan{
+	width:100px;
+	margin-top:30px;
+}
+
+/*dag*/
+#zon{
+	animation: draaien 15s linear infinite;
+}
+
+/*animatie zon*/
+@keyframes draaien{
+	0%{
+		transform: rotate(0deg);
+    }
+    100%{
+		transform: rotate(360deg);
+    }
+}
+
+/*nacht*/
+#maan{
+	animation: zweven 2s alternate ease-in-out infinite;
+}
+
+@keyframes zweven{
+	0%{
+		padding-top: 0;
+    }
+
+    100%{
+		padding-top: 20px;
+    }
+}
+
+/*geanimeerd schip (buiten beeld)*/
+img[src="schip.png"]{
+	position: absolute;
+	width:50px;
+	left:-100%;
+	animation: raketbaan 20s linear infinite;
+}
+
+/*schip animatie*/
+@keyframes raketbaan{
+	0%{
+		left:-10%;
+		bottom:-10%;
+		transform: rotate(0deg);
+    }
+
+    15%{
+		left:20%;
+		bottom:10%;
+		transform: rotate(-90deg);
+    }
+
+    20%{
+    	transform: rotate(-70deg);
+    }
+
+    30%{
+		left:40%;
+		bottom:50%;
+		transform: rotate(-15deg);
+    }
+
+    60%{
+		left:110%;
+		bottom:70%;
+		transform: rotate(-5deg);
+    }
+
+    65%{
+		left:110%;
+		bottom:50%;
+		transform: rotate(180deg);
+    }
+
+
+    70%{
+		left:80%;
+		bottom:30%;
+		transform: rotate(130deg);
+    }
+
+    80%{
+		left:60%;
+		bottom:10%;
+		transform: rotate(100deg);
+    }
+
+    90%{
+		left:50%;
+		bottom:-30%;
+		transform: rotate(90deg);
+	}
+
+	100%{
+		left:20%;
+		bottom:-30%;
+		transform: rotate(90deg);
+    }
+}
+
+/*afbeelding alleen voor grotere schermen*/
+div.aarde,div.mars{
+	display:none;
+}
+
+/*Tablet*/
+@media only screen and (min-width: 768px){
+	/*zon naast tijd*/
+	#zon{
+		margin: 0 15px;
+		width:60px;
+	}
+
+	#tijd{
+		display: inline-block;
+	}
+}
+
+/*Laptop*/
+@media only screen and (min-width: 1024px){
+	/*afbeelding alleen voor kleine schermen*/
+	#zon,#maan{
+		display:none;
+	}
+
+	main{
+		display: grid;
+		/*Gelijke kolommen*/
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+	    'aarde tijd mars'
+	    'datum seizoen weer';
+	    /*centreren*/
+	    align-items: center;
+	    justify-items: center;
+	    /*grotere letters*/
+		font-size: 1.5em;
+	}
+
+	/*namen grid*/
+	div.aarde{
+		grid-area:aarde;
+	}
+
+	div.mars{
+		grid-area:mars;
+	}
+
+	#tijd{
+		grid-area:tijd;
+	}
+
+	#datum{
+		grid-area:datum;
+	}
+	#seizoen{
+		grid-area:seizoen;
+	}
+	#weer{
+		grid-area:weer;
+	}
+
+	p{
+		/*ruimte tussen tijd en de andere elementen*/
+		margin-bottom:40px;
+	}
+
+	div.aarde,div.mars{
+		display:block;
+	}
+
+	/*afbeelding aarde*/
+	div.aarde{
+		width:120px;
+		height: 120px;
+		position: relative;
+	}
+
+	img[src="earth.png"]{
+		width:100px;
+		top:20px;
+		left:0;
+		position: absolute;
+	}
+
+	div.aarde img[src="moon.png"]{
+		left:80px;
+		width:50px;
+		position: absolute;
+	}
+
+	/*afbeelding mars*/
+	div.mars{
+		width:105px;
+		height: 75px;
+		position: relative;
+	}
+
+	img[src="mars.png"]{
+		left:15px;
+		width:70px;
+		position: absolute;
+	}
+
+	img.maan1{
+		top:50px;
+		left:0;
+		width:30px;
+		position: absolute;
+	}
+
+	img.maan2{
+		left:80px;
+		width:30px;
+		position: absolute;
+	}
+
+	/*alle manen animeren*/
+	img[src="moon.png"]{
+		animation: zwevenklein 1s alternate ease-in-out infinite;
+	}
+
+	/*animatie manen*/
+	@keyframes zwevenklein{
+		0%{
+			padding-top: 0;
+	    }
+
+	    100%{
+			padding-top: 5px;
+	    }
+	}
+}
+
+/*Groot scherm*/
+@media only screen and (min-width: 1440px){
+	main{
+		/*maak het beeld smaller*/
+		width:80%;
+		/*centeren*/
+		margin: auto;
+		grid-template-areas:
+	    'aarde . mars'
+	    'tijd tijd tijd'
+	    'datum seizoen weer';
+	}
+}
