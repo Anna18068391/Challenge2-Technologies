@@ -1,11 +1,5 @@
-//hoe om 00:00 herladen?
-//hoe klok laten lopen?
-//animatie in box hoe? invloed op de rest stijl?
-//wisslen maan zon hoe? tot 60 uur en na 6uur anders
-
-var date = new Date();
-
 function toonTijd() {
+	var date = new Date();
 	var uren = date.getHours();
 	// als het uur uit 1 getal bestaat voeg er dan een '0' aan toe
 	if (uren <=9){
@@ -21,10 +15,10 @@ function toonTijd() {
 	}
 	// in de HTML
 	document.getElementById('tijd').innerHTML=uren+":"+minuten+":"+seconden;
-	//setTimeout(toonTijd,1000);
 }
 
 function toonDatum() {
+	var date = new Date();
 	var dag = date.getDate();
 	var maand = date.getMonth();
 	// de naam van de maand in plaats van een cijfer
@@ -72,6 +66,7 @@ function toonDatum() {
 }
 
 function toonSeizoen() {
+	var date = new Date();
 	var seizoen = date.getMonth();
 		if (seizoen == 2,3,4)
 			seizoen = "Lente";
@@ -90,29 +85,86 @@ function toonWeer() {
 	var weerbericht='Bewolkt';
 	// in de HTML
 	document.getElementById('weer').innerHTML=graden+'°C '+weerbericht;
-
-	//setTimeout("toonWeerbericht()",bij 000 uurs);
 }
 
-/*function wisselDagIcoon() {
+function wisselDagIcoon() {
+	var date = new Date();
+	var uren = date.getHours();
 	var zon = document.getElementById('zon');
-	if (zon.style.display === "none") {
-	zon.style.display = "block";
-	} else {
-	zon.style.display = "none";
-	}
 	var maan = document.getElementById('maan');
-	if (maan.style.display === "none") {
-	maan.style.display = "block";
-	} else {
-	maan.style.display = "none";
+	switch(uren) {
+		case 6:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 7:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 8:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 9:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 10:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 11:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 12:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 13:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 14:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 15:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 11:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 16:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		case 17:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		break;
+		default:
+		zon.style.display = "none";
+		maan.style.display = "inline-block";
 	}
-	//als tijd is na 6uur - maan zichtbaar tot 6uur- maan weg
-}*/
+}
+
+function herlaadPagina(){
+	var date = new Date();
+	var minuten = date.getMinutes();
+	var uren = date.getHours();
+	if ((minuten==0) && (uren==0)){
+		location.reload();
+	}
+}
 
 // alle functies activeren
-toonTijd();
+setInterval(toonTijd, 500);
 toonDatum();
 toonSeizoen();
 toonWeer();
-//wisselDagIcoon()
+setInterval(wisselDagIcoon, 500);
+// om de minuut checken
+setInterval(herlaadPagina, 60000);

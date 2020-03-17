@@ -52,11 +52,20 @@ p{
 
 #zon,#maan{
 	width:100px;
-	margin-top:30px;
+	height: 100px;
+	margin:30px auto;
+	position: relative;
+}
+
+#zon [src="sun.png"],#maan [src="moon.png"]{
+	width:100%;
+	position: absolute;
+	/*center*/
+	left:0;
 }
 
 /*dag*/
-#zon{
+#zon [src="sun.png"]{
 	animation: draaien 15s linear infinite;
 }
 
@@ -77,11 +86,11 @@ p{
 
 @keyframes zweven{
 	0%{
-		padding-top: 0;
+		top: 0;
     }
 
     100%{
-		padding-top: 20px;
+		top: 20px;
     }
 }
 
@@ -163,9 +172,18 @@ div.aarde,div.mars{
 /*Tablet*/
 @media only screen and (min-width: 768px){
 	/*zon naast tijd*/
-	#zon{
-		margin: 0 15px;
-		width:60px;
+	#zon, #maan{
+		width:50px;
+		height:50px;
+		margin: 0 15px 0 0;
+	}
+
+	/*man groter maken*/
+	#maan [src="moon.png"]{
+		width: 150%;
+		position: absolute;
+		left: -10px;
+		top: -20px;
 	}
 
 	#tijd{
@@ -177,7 +195,8 @@ div.aarde,div.mars{
 @media only screen and (min-width: 1024px){
 	/*afbeelding alleen voor kleine schermen*/
 	#zon,#maan{
-		display:none;
+		/*JavaScript overschrijven*/
+		display:none !important;
 	}
 
 	main{
@@ -219,7 +238,7 @@ div.aarde,div.mars{
 
 	p{
 		/*ruimte tussen tijd en de andere elementen*/
-		margin-bottom:40px;
+		margin-top:50px;
 	}
 
 	div.aarde,div.mars{
