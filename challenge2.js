@@ -92,62 +92,106 @@ function wisselDagIcoon() {
 	var uren = date.getHours();
 	var zon = document.getElementById('zon');
 	var maan = document.getElementById('maan');
+	var header = document.getElementById('header');
+	//var achtergrond=;
 	switch(uren) {
 		case 6:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 7:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 8:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 9:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 10:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 11:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 12:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 13:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 14:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 15:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 11:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 16:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		case 17:
 		zon.style.display = "inline-block";
 		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
 		break;
 		default:
 		zon.style.display = "none";
 		maan.style.display = "inline-block";
+		document.body.style.color = "white";
+		document.body.style.backgroundImage = "url('agnacht.jpg')";
+		header.style.backgroundColor = "black";
 	}
 }
 
