@@ -87,7 +87,7 @@ function toonWeer() {
 	document.getElementById('weer').innerHTML=graden+'°C '+weerbericht;
 }
 
-function wisselDagIcoon() {
+function wisselDagStijl() {
 	var date = new Date();
 	var uren = date.getHours();
 	var zon = document.getElementById('zon');
@@ -209,6 +209,6 @@ setInterval(toonTijd, 500);
 toonDatum();
 toonSeizoen();
 toonWeer();
-setInterval(wisselDagIcoon, 500);
+setInterval(wisselDagStijl, 500);
 // om de minuut checken
 setInterval(herlaadPagina, 60000);
