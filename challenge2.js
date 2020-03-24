@@ -93,11 +93,14 @@ function wisselDagStijl() {
 	var zon = document.getElementById('zon');
 	var maan = document.getElementById('maan');
 	var header = document.getElementById('header');
-	//var achtergrond=;
 	switch(uren) {
+		// overdag is van 6 tot uur 18 uur, anders nacht
 		case 6:
+		// zon zichtbaar
 		zon.style.display = "inline-block";
+		// maan niet zichtbaar
 		maan.style.display = "none";
+		// lichte achtegrond en zwarte tekst
 		document.body.style.backgroundImage = "url('agdag.jpg')";
 		document.body.style.color = "black";
 		header.style.backgroundColor = "white";
@@ -186,15 +189,26 @@ function wisselDagStijl() {
 		document.body.style.color = "black";
 		header.style.backgroundColor = "white";
 		break;
+		case 18:
+		zon.style.display = "inline-block";
+		maan.style.display = "none";
+		document.body.style.backgroundImage = "url('agdag.jpg')";
+		document.body.style.color = "black";
+		header.style.backgroundColor = "white";
+		break;
 		default:
+		// zon niet zichtbaar
 		zon.style.display = "none";
+		// maan zichtbaar
 		maan.style.display = "inline-block";
+		// lichte achtegrond en zwarte tekst
 		document.body.style.color = "white";
 		document.body.style.backgroundImage = "url('agnacht.jpg')";
 		header.style.backgroundColor = "black";
 	}
 }
 
+// herlaad de pagina om 0:00 om datum, seizoen en weerbericht te updaten
 function herlaadPagina(){
 	var date = new Date();
 	var minuten = date.getMinutes();

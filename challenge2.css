@@ -14,7 +14,7 @@
 body{
 	/*lettertype*/
 	font-family: 'Saira Semi Condensed',sans-serif;
-	/*tekst in het midden*/
+	/*tekst centeren*/
 	text-align: center;
 	/*achtergrond (bron in JavaScript)*/
 	background-position: center;
@@ -22,11 +22,11 @@ body{
 	background-size: cover;
 	/*absolute gepositioneerde animaties vliegen buiten de pagina*/
 	overflow: hidden;
+	/*achtergrond vult het hele scherm*/
 	height: 100vh;
 }
 
 header{
-	background-color: black;
 	padding:20px 0;
 }
 
@@ -49,6 +49,7 @@ p{
 	font-size: 4em;
 }
 
+/*grote van box met plaatje zon en maan erin*/
 #zon,#maan{
 	width:100px;
 	height: 100px;
@@ -170,17 +171,21 @@ div.aarde,div.mars{
 
 /*Tablet*/
 @media only screen and (min-width: 768px){
-	/*zon naast tijd*/
+	main{
+		/*grotere letters*/
+		font-size: 1.5em;
+	}
+
+	/*zon/maan naast tijd*/
 	#zon, #maan{
-		width:50px;
-		height:50px;
+		width:80px;
+		height:80px;
 		margin: 0 15px 0 0;
 	}
 
-	/*man groter maken*/
+	/*maan groter maken*/
 	#maan [src="moon.png"]{
 		width: 150%;
-		position: absolute;
 		left: -10px;
 		top: -20px;
 	}
@@ -208,8 +213,6 @@ div.aarde,div.mars{
 	    /*centreren*/
 	    align-items: center;
 	    justify-items: center;
-	    /*grotere letters*/
-		font-size: 1.5em;
 	}
 
 	/*namen grid*/
@@ -240,6 +243,7 @@ div.aarde,div.mars{
 		margin-top:50px;
 	}
 
+	/*afbeelding alleen voor grotere schermen*/
 	div.aarde,div.mars{
 		display:block;
 	}
@@ -256,6 +260,7 @@ div.aarde,div.mars{
 		top:20px;
 		left:0;
 		position: absolute;
+		animation: draaien 10s linear infinite;
 	}
 
 	div.aarde img[src="moon.png"]{
@@ -275,6 +280,7 @@ div.aarde,div.mars{
 		left:15px;
 		width:70px;
 		position: absolute;
+		animation: draaien 15s linear infinite;
 	}
 
 	img.maan1{
@@ -282,12 +288,14 @@ div.aarde,div.mars{
 		left:0;
 		width:30px;
 		position: absolute;
+		animation: zwevenklein 1s alternate ease-in-out infinite;
 	}
 
 	img.maan2{
 		left:80px;
 		width:30px;
 		position: absolute;
+		animation: zwevenklein 1s alternate ease-in-out infinite;
 	}
 
 	/*alle manen animeren*/
@@ -313,7 +321,7 @@ div.aarde,div.mars{
 		/*maak het beeld smaller*/
 		width:80%;
 		/*centeren*/
-		margin: auto;
+		margin: 50px auto 0 auto;
 		grid-template-areas:
 	    'aarde . mars'
 	    'tijd tijd tijd'
