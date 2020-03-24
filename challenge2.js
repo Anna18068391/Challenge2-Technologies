@@ -94,7 +94,7 @@ function wisselDagStijl() {
 	var maan = document.getElementById('maan');
 	var header = document.getElementById('header');
 	switch(uren) {
-		// overdag is van 6 tot uur 18 uur, anders nacht
+		// overdag is van 6.00 uur tot 18.00 uur, anders nacht
 		case 6:
 		// zon zichtbaar
 		zon.style.display = "inline-block";
@@ -208,7 +208,7 @@ function wisselDagStijl() {
 	}
 }
 
-// herlaad de pagina om 0:00 om datum, seizoen en weerbericht te updaten
+// herlaad de pagina om 0.00 uur om datum, seizoen en weerbericht te updaten
 function herlaadPagina(){
 	var date = new Date();
 	var minuten = date.getMinutes();
