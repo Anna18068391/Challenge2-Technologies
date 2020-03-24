@@ -14,10 +14,10 @@ Voordat ik de website ben gaan coderen heb ik eerst gebrainstormd en schetsen ge
 ## Tijd
 Door het gebruik van het JavaScript datumobject is de huidige aardse tijd te zien op de klok. Door gebruik van het datumobject word ook de datum en het seizoen getoond. Om duidelijk te maken wanneer het dag of nacht is veranderd de stijl van de pagina met de functie `wisselDagStijl()`.
 
-### Dag
+#### Dag
 Van 6 tot 18 uur is het dag. De lucht is licht blauw (de achtergrond). De tekst is zwart op een lichte achtergond. Op een mobiel of tablet is een geanimeerd zonnetje te zien.
 
-### Nacht
+#### Nacht
 Van 18 tot 6 uur is het nacht. De lucht is donker en er zijn sterren te zien (de achtergrond). De tekst is wit op een donkere achtergond. Op een mobiel of tablet is een grote geanimeerde maan te zien.
 
 ## Responsive
@@ -28,11 +28,11 @@ Op kleine schermen staat de inhoud van de site onder elkaar. Als de site groter 
 ## Animatie
 Om de mensen op Mars op te vrolijken is er gebruik gemaakt van CSS 3 animaties. Ik heb animatie op verschillende manieren toegepast. Alle geanimeerde afbeedingen heb ik zelf getekend op mijn laptop met een digitale pen.
 
-### Zon en maan
+#### Zon en maan
 De zon en maan zijn te te zien op kleinere schemen. De zon overdag en de maan 's nachts. De zon draait rond en de maan zweeft op en neer.
 
-### De aarde en Mars
+#### De aarde en Mars
 Op grotere schemen zijn de planeten de aarde en Mars te zien met hun manen. De planeten draaien rond (mars iets langzamer dan de aarde) en hun manen zweven op en neer.
 
-### Het ruimteschip
+#### Het ruimteschip
 Het ruimteschip is een absoluut gepositoneerde afbeeding van SpaceX's Starship, waarin de mensen naar Mars zijn gereisd. Het schip vliegt heen en weer over de website, ook buiten de website. Deze animatie heb ik gemaakt door de `left` en `bottom` waardes in keyframes te veranderen en het schip te draaien zodat het schip de goede kant op wijst met `transform: rotate;`.
